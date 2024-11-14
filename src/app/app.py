@@ -95,14 +95,23 @@ class App:
         """
         Calcula y retorna el factorial de 'numero' usando un ciclo.
         """
-        pass
+        factorial = 1
+        for i in range(1, numero + 1):
+            factorial *= i
+        return factorial
+        
+    pass
 
     # 8. Cuenta la cantidad de vocales en una cadena
     def contar_vocales(cadena):
         """
         Cuenta y retorna la cantidad de vocales en la cadena.
         """
-        pass
+        vocales = "aeiouAEIOU"
+        count = sum(1 for char in cadena if char in vocales)
+        return count
+        
+    pass
 
     # 9. Encuentra el segundo número mayor en una lista
     def segundo_mayor(lista):
@@ -110,11 +119,23 @@ class App:
         Encuentra y retorna el segundo número más grande en la lista.
         Si no existe, retorna None.
         """
-        pass
+        unique_numbers = list(set(lista))
+        if len(unique_numbers) < 2:
+            return None
+        unique_numbers.sort(reverse=True)
+        return unique_numbers[1] 
+    pass
 
     # 10. Calcula la serie de Fibonacci hasta n términos
     def fibonacci(n):
         """
         Genera y retorna una lista con los primeros 'n' términos de la serie de Fibonacci.
         """
-        pass
+        
+        if n <= 0:
+         return []
+        serie = [0, 1]
+        while len(serie) < n:
+            serie.append(serie[-1] + serie[-2])
+        return serie[:n]
+    pass
